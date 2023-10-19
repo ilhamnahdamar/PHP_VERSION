@@ -1,0 +1,75 @@
+ScriptAlias /php56/ "C:/xampp/php56/"
+
+<Directory "C:/xampp/php56">
+
+  AllowOverride None
+
+  Options None
+
+  Require all denied
+
+  <Files "php-cgi.exe">
+
+     Require all granted
+
+  </Files>
+
+</Directory>
+
+
+Listen 8056
+
+<VirtualHost *:8056>
+
+  UnsetEnv PHPRC
+
+  <FilesMatch "\.php$">
+
+    php_flag engine off
+
+    SetHandler application/x-httpd-php56
+
+    Action application/x-httpd-php56 "/php56/php-cgi.exe"
+
+  </FilesMatch>
+
+</VirtualHost>
+
+
+
+ScriptAlias /php71/ "C:/xampp/php71/"
+
+<Directory "C:/xampp/php71">
+
+  AllowOverride None
+
+  Options None
+
+  Require all denied
+
+  <Files "php-cgi.exe">
+
+     Require all granted
+
+  </Files>
+
+</Directory>
+
+
+Listen 8071
+
+<VirtualHost *:8071>
+
+  UnsetEnv PHPRC
+
+  <FilesMatch "\.php$">
+
+    php_flag engine off
+
+    SetHandler application/x-httpd-php71
+
+    Action application/x-httpd-php71 "/php71/php-cgi.exe"
+
+  </FilesMatch>
+
+</VirtualHost>
